@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    {% block title %}<title>OSINT DORKING : Advance search </title>{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Add additional CSS in static file -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/styles.css' %" ></script>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-2">
+            {% block sidebar %}
+            <ul class="sidenav" id="bar">
+                <li><a href="{% url 'advance_search' %}">Home</a></li>
+                <li><a href="{% url 'google_search' %}">Google Dorks </a></li>
+                <li><a href="{% url 'bing_search' %}">Bing Dorks</a></li>
+                <li><a href="{% url 'yandex_search' %}">Yandex Dorks</a></li>
+                <li><a href="{% url 'shodan_search' %}">Shodan Dorks</a></li>
+                <li><a href="{% url 'duck_search' %}">duckduckgo Dorks</a></li>
+            </ul>
+            {% endblock %}
+        </div>
+        <div align="center" class="container-fluid">
+                <div class="card" style="border: red;">
+                    <h4 class="card-header" style="color: red;"><strong>ADVANCE SEARCH PROJECT</strong></h4>
+                        <div class="card-body">
+                            <h4 class="card-title" style="color: red;"><strong>OSINT DORKS</strong></h4>
+                                <p class="card-text" style="color: white;"><strong>Google | Bing | shodan | yandex | duckduckgo</strong> </p>
+                        </div>
+                </div>
+
+            </div>
+        <div class="col-sm-30">
+            {% block content %}
+             <div align="left">
+                 <button type="submit" class="btn btn-primary my-1" style="margin-left: 60px" onclick="openNav()">Open</button>
+             </div>
+            {% endblock %}
+        </div>
+        <br>
+        <br>
+        <div align="center" >
+            <table class="table table-dark table-hover" style="width: 40%;">
+                <tr>
+                    <th >
+                        <div align="center">
+                            <a style="align-content: center;" href="https://www.linkedin.com/in/ildefonso-gonz%C3%A1lez-s%C3%A1nchez-0b693555/"> <h2><strong>Powered by f0ns1</strong><h2> </a>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th >
+                        <div align="center">
+                            <a href="https://github.com/f0ns1"><h2><strong> gihub </strong> </h2></a>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th >
+                        <div align="center">
+                            <a href="https://roadtooscp-f0ns1.blogspot.com/"> <h2><strong>visit my blog roadToOSCP  </strong> </h2></a>
+                        </div>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+<script>
+function openNav() {
+  document.getElementById("bar").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("bar").style.width = "0";
+}
+</script>
+</div>
+</body>
+
+</html>

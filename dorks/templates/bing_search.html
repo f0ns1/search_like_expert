@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<style>
+
+</style>
+<head>
+
+    {% block title %}<title>OSINT DORKING : Advance search </title>{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Add additional CSS in static file -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-2">
+            {% block sidebar %}
+            <ul class="sidenav" id="bar">
+                <li><a href="{% url 'advance_search' %}">Home</a></li>
+                <li><a href="{% url 'google_search' %}">Google Dorks </a></li>
+                <li><a href="{% url 'bing_search' %}">Bing Dorks</a></li>
+                <li><a href="{% url 'yandex_search' %}">Yandex Dorks</a></li>
+                <li><a href="{% url 'shodan_search' %}">Shodan Dorks</a></li>
+                <li><a href="{% url 'duck_search' %}">duckduckgo Dorks</a></li>
+            </ul>
+            {% endblock %}
+        </div>
+        <div align="center" class="container-fluid">
+                <div class="card" style="border: red;">
+                    <h4 class="card-header" style="color: red;"><strong>ADVANCE SEARCH PROJECT</strong></h4>
+                        <div class="card-body">
+                            <h4 class="card-title" style="color: red;"><strong>OSINT DORKS</strong></h4>
+                                <p class="card-text" style="color: white;"><strong>Google | Bing | shodan | yandex | duckduckgo</strong> </p>
+                        </div>
+                </div>
+
+            </div>
+        <div class="col-sm-30">
+            {% block content %}
+             <div align="left">
+                 <button type="submit" class="btn btn-primary my-1" style="margin-left: 60px" onclick="openNav()">Open</button>
+             </div>
+            {% endblock %}
+        </div>
+        <div align="center" class="opacityform">
+            <form class="row g-3">
+                <div class="col-md-3">
+                    <label for="inputliteral1" class="form-label">Literal</label>
+                    <input type="literal" class="form-control" id="inputliteral1">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputdomain" class="form-label">Domain</label>
+                    <input type="domain" class="form-control" id="inputdomain">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputintitle" class="form-label">title</label>
+                    <input type="intitle" class="form-control" id="inputintitle">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputurl" class="form-label">url search by default</label>
+                    <input type="inurl" class="form-control" id="inputurl">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputbody" class="form-label">body web search</label>
+                    <input type="text" class="form-control" id="inputbody">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputfiletype" class="form-label">search filetype</label>
+                    <select id="inputfiletype" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>txt</option>
+                        <option>xls</option>
+                        <option>ppt</option>
+                        <option>csv</option>
+                        <option>doc</option>
+                        <option>docx</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="inputexclude" class="form-label">exclude for search</label>
+                    <input type="inurl" class="form-control" id="inputexclude">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputand" class="form-label">AND concat</label>
+                    <input type="text" class="form-control" id="inputand" placeholder="">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputor" class="form-label">OR concat</label>
+                    <input type="text" class="form-control" id="inputor" placeholder="">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputip" class="form-label">search by ip</label>
+                <input type="text" class="form-control" id="inputip" placeholder="">
+                </div>
+                    <div class="col-md-3">
+                        <label for="inputrss" class="form-label">RSS</label>
+                        <input type="text" class="form-control" id="inputrss">
+                    </div>
+                <div class="col-md-3">
+                    <label for="inputdate" class="form-label">Date filter</label>
+                    <select id="inputdate" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>Last day</option>
+                        <option>Last week</option>
+                        <option>Last month</option>
+                        <option>Last year</option>
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <br>
+                </div>
+                <div class="col-md-12">
+                    <label for="generate" class="form-label">generate Dork and hack: </label>
+                    <button id="generate" type="submit" class="form-select btn btn-primary">Search dork on bing</button>
+                </div>
+            </form>
+
+        </div>
+        <br>
+        <div align="center" class="opacityform row g-3">
+             <div class="col-md-12">
+                <label for="inputcommand" class="form-label">Manual command execution</label>
+                <input type="text" class="form-control" id="inputcommand">
+             </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script>
+function openNav() {
+  document.getElementById("bar").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("bar").style.width = "0";
+}
+</script>
+</html>
