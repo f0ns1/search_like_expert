@@ -53,7 +53,7 @@
             {% endblock %}
         </div>
         <div align="center" class="opacityform">
-            <form class="row g-3">
+            <form class="row g-3"id="form-dork">
                 <div class="col-md-3">
                     <label for="inputliteral1" class="form-label">Literal</label>
                     <input type="literal" class="form-control" id="inputliteral1">
@@ -121,29 +121,39 @@
                 </div>
                 <div class="col-md-12">
                     <label for="generate" class="form-label">generate Dork and hack: </label>
-                    <button id="generate" type="submit" class="form-select btn btn-primary">Search dork on bing</button>
+                    <button id="generate" type="submit" onclick="generateDork()" class="form-select btn btn-primary">Search dork on bing</button>
                 </div>
             </form>
 
         </div>
         <br>
         <div align="center" class="opacityform row g-3">
+            <form class="row g-3"  method="POST" id="form-send" enctype="text/plain">
+                {% csrf_token %}
              <div class="col-md-12">
-                <label for="inputcommand" class="form-label">Manual command execution</label>
-                <input type="text" class="form-control" id="inputcommand">
+                 <label for="inputcommand" class="form-label">Manual command execution</label>
+                 <input type="text" class="form-control" id="inputcommand">
+                 <button  type="submit" class="form-select btn btn-primary">exec</button>
              </div>
+            </form>
         </div>
 
     </div>
 </div>
 </body>
 <script>
-function openNav() {
-  document.getElementById("bar").style.width = "250px";
-}
+    function generateDork(){
+        alert('Dork generation')
+        var command = document.getElementById('inputcommand');
+        alert('dork '+command.innerText)
+        document.getElementById('form-send').submit();
+    }
+    function openNav() {
+        document.getElementById("bar").style.width = "250px";
+    }
 
-function closeNav() {
-  document.getElementById("bar").style.width = "0";
-}
+    function closeNav() {
+        document.getElementById("bar").style.width = "0";
+    }
 </script>
 </html>
