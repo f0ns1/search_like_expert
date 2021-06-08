@@ -37,11 +37,13 @@
         </div>
         <div align="center" class="container-fluid">
                 <div class="card" style="border: red;">
-                    <h4 class="card-header" style="color: red;"><strong>ADVANCE SEARCH PROJECT</strong></h4>
+                    <h2 class="card-header" style="color: red;"><strong>ADVANCE SEARCH PROJECT</strong></h2>
                         <div class="card-body">
-                            <h4 class="card-title" style="color: red;"><strong>OSINT DORKS</strong></h4>
+                            <h2 class="card-title" style="color: red;"><strong>OSINT DORKS</strong></h2>
                                 <p class="card-text" style="color: white;"><strong>Google | Bing | shodan | yandex | duckduckgo</strong> </p>
                         </div>
+                    <br>
+                    <h1 class="card-title" style="color: white;"><b><strong>GOOGLE</strong></b></h1>
                 </div>
 
             </div>
@@ -128,11 +130,14 @@
         </div>
         <br>
         <div align="center" class="opacityform row g-3">
-             <div class="col-md-12">
-                 <label for="inputcommand" class="form-label">Manual command execution</label>
-                 <input type="text" class="form-control" id="inputcommand">
-                 <button type="submit" class="form-select btn btn-primary">exec</button>
-             </div>
+            <form action = "google" method = "POST" class="row g-3" >
+                {% csrf_token %}
+                <div class="col-md-12">
+                    <label for="inputcommand" class="form-label">Manual command execution: </label>
+                    <input id="inputcommand" type="text" name="inputcommand" class="form-control" >
+                    <input type="submit" value="exec" class="form-select btn btn-primary">
+                </div>
+            </form>
         </div>
 
     </div>
