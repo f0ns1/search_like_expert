@@ -16,6 +16,7 @@
     <!-- Add additional CSS in static file -->
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'app.js' %}"></script>
 </head>
 
 <body>
@@ -55,26 +56,26 @@
             {% endblock %}
         </div>
         <div align="center" class="opacityform">
-            <form class="row g-3">
+            <div class="row g-3">
                 <div class="col-md-3">
                     <label for="inputliteral1" class="form-label">Literal</label>
-                    <input type="literal" class="form-control" id="inputliteral1">
+                    <input type="text" class="form-control" id="inputliteral1" value=""\>
                 </div>
                 <div class="col-md-3">
                     <label for="inputdomain" class="form-label">Domain</label>
-                    <input type="domain" class="form-control" id="inputdomain">
+                    <input type="text" class="form-control" id="inputdomain"value=""\>
                 </div>
                 <div class="col-md-3">
                     <label for="inputintitle" class="form-label">title</label>
-                    <input type="intitle" class="form-control" id="inputintitle">
+                    <input type="text" class="form-control" id="inputintitle" value=""\>
                 </div>
                 <div class="col-md-3">
                     <label for="inputurl" class="form-label">url search by default</label>
-                    <input type="inurl" class="form-control" id="inputurl">
+                    <input type="inurl" class="form-control" id="inputurl" value=""\>
                 </div>
                 <div class="col-md-3">
                     <label for="inputbody" class="form-label">body web search</label>
-                    <input type="text" class="form-control" id="inputbody">
+                    <input type="text" class="form-control" id="inputbody" value=""\>
                 </div>
                 <div class="col-md-3">
                     <label for="inputfiletype" class="form-label">search filetype</label>
@@ -90,7 +91,7 @@
                 </div>
                 <div class="col-md-3">
                     <label for="inputexclude" class="form-label">exclude for search</label>
-                    <input type="inurl" class="form-control" id="inputexclude">
+                    <input type="text" class="form-control" id="inputexclude" value=""\>
                 </div>
                 <div class="col-md-3">
                     <label for="inputand" class="form-label">AND concat</label>
@@ -98,15 +99,15 @@
                 </div>
                 <div class="col-md-3">
                     <label for="inputor" class="form-label">OR concat</label>
-                    <input type="text" class="form-control" id="inputor" placeholder="">
+                    <input type="text" class="form-control" id="inputor" placeholder="" value=""\>
                 </div>
                 <div class="col-md-3">
                     <label for="inputip" class="form-label">search by ip</label>
-                <input type="text" class="form-control" id="inputip" placeholder="">
+                <input type="text" class="form-control" id="inputip" placeholder="" value=""\>
                 </div>
                     <div class="col-md-3">
                         <label for="inputrss" class="form-label">RSS</label>
-                        <input type="text" class="form-control" id="inputrss">
+                        <input type="text" class="form-control" id="inputrss" value=""\>
                     </div>
                 <div class="col-md-3">
                     <label for="inputdate" class="form-label">Date filter</label>
@@ -123,9 +124,9 @@
                 </div>
                 <div class="col-md-12">
                     <label for="generate" class="form-label">generate Dork and hack: </label>
-                    <button id="generate" type="submit" class="form-select btn btn-primary">Search dork on bing</button>
+                    <button id="generate"  onclick="generateGoogleDork()" class="form-select btn btn-primary">generate</button>
                 </div>
-            </form>
+            </div>
 
         </div>
         <br>
@@ -143,13 +144,5 @@
     </div>
 </div>
 </body>
-<script>
-function openNav() {
-  document.getElementById("bar").style.width = "250px";
-}
 
-function closeNav() {
-  document.getElementById("bar").style.width = "0";
-}
-</script>
 </html>

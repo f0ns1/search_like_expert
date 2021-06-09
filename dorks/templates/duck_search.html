@@ -16,6 +16,7 @@
     <!-- Add additional CSS in static file -->
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'app.js' %}"></script>
 </head>
 
 <body>
@@ -123,7 +124,7 @@
                 </div>
                 <div class="col-md-12">
                     <label for="generate" class="form-label">generate Dork and hack: </label>
-                    <button id="generate" type="submit" class="form-select btn btn-primary">Search dork on bing</button>
+                    <button id="generate" type="submit" class="form-select btn btn-primary">Search dork on duckduckgo</button>
                 </div>
             </form>
 
@@ -145,13 +146,5 @@
     </div>
 </div>
 </body>
-<script>
-function openNav() {
-  document.getElementById("bar").style.width = "250px";
-}
 
-function closeNav() {
-  document.getElementById("bar").style.width = "0";
-}
-</script>
 </html>

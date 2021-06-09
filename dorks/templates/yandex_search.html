@@ -16,6 +16,7 @@
     <!-- Add additional CSS in static file -->
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'app.js' %}"></script>
 </head>
 
 <body>
@@ -145,19 +146,5 @@
 
 
 </body>
-<script>
-    function generateDork(){
-        alert('Dork generation')
-        var command = document.getElementById('inputcommand');
-        alert('dork '+command.innerText)
-        document.getElementById('form-send').submit();
-    }
-    function openNav() {
-        document.getElementById("bar").style.width = "250px";
-    }
 
-    function closeNav() {
-        document.getElementById("bar").style.width = "0";
-    }
-</script>
 </html>
