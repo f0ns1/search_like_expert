@@ -1,7 +1,17 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from selenium import webdriver
+from pathlib import Path
 
+def convert(lst):
+    res_dct = {"data" : lst[i] for i in range(0, len(lst))}
+    print(res_dct)
+    return res_dct
+
+def getFile():
+    path = Path(__file__).parent / "dorks.txt"
+    file = open(path , "r")
+    return file.readlines()
 
 def dorks(request):
     print("User Request : ", request)
@@ -11,19 +21,29 @@ def dorks(request):
 def google(request):
     if request.method == 'GET':
         print("GET Request ")
-        return render(request, "google_search.html")
+        data = getFile()
+        context = {
+            "object_list": data
+        }
+        return render(request, "google_search.html",context)
     elif request.method == 'POST':
         print("decode ", request.POST['inputcommand'])
         try:
             driver = webdriver.Firefox()
             driver.get("http://www.google.com")
+            print(request.POST['inputcommand'])
+            driver.find_element_by_id("L2AGLb").click();
             input_element = driver.find_element_by_name("q")
             input_element.send_keys(str(request.POST['inputcommand']))
             input_element.submit()
             print("google query execution ", request.POST['inputcommand'])
+            data = getFile()
+            context = {
+                "object_list": data
+            }
         except ValueError:
             pass
-        return render(request, 'google_search.html')
+        return render(request, 'google_search.html', context)
 
 @csrf_exempt
 def shodan(request):

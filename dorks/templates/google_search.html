@@ -19,7 +19,7 @@
     <script src="{% static 'app.js' %}"></script>
 </head>
 
-<body>
+<body >
 
 <div class="container-fluid">
 
@@ -49,11 +49,11 @@
 
             </div>
         <div class="col-sm-30">
-            {% block content %}
+
              <div align="left">
                  <button type="submit" class="btn btn-primary my-1" style="margin-left: 60px" onclick="openNav()">Open</button>
              </div>
-            {% endblock %}
+
         </div>
         <div align="center" class="opacityform">
             <div class="row g-3">
@@ -87,6 +87,7 @@
                         <option>csv</option>
                         <option>doc</option>
                         <option>docx</option>
+                        <option>pdf</option>
                     </select>
                 </div>
                 <div class="col-md-3">
@@ -119,6 +120,17 @@
                         <option>Last year</option>
                     </select>
                 </div>
+                {% block content %}
+                <div class="col-md-12">
+                    <label for="dorSelect" class="form-label">Dork--List--Hack</label>
+                    <select id="dorSelect" class="form-select" >
+                        <option selected>Choose...</option>
+                        {% for dork in object_list %}
+                            <option >{{ dork }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                {% endblock %}
                 <div class="col-md-12">
                     <br>
                 </div>
