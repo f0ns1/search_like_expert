@@ -21,9 +21,13 @@ Starting development server at http://127.0.0.1:8000/
 
 Quit the server with CONTROL-C.
 
-![Image description]( app.png )
+Application:
 
 ![Image description]( app1.png )
+
+Google Dorks:
+
+![Image description]( app.png )
 
 
 
