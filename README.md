@@ -21,8 +21,10 @@ Starting development server at http://127.0.0.1:8000/
 
 Quit the server with CONTROL-C.
 
-![Image description]( app.png )
+![Image description]( 2021-08-22 09-30-53.png )
+
+![Image description]( 2021-08-22 11-06-18.png )
 
 
-![Image description]( app1.png )
+
 
