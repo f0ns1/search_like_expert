@@ -1,5 +1,9 @@
 # search_like_expert
 
+** dependencies: 
+  -selenium webdriver for python
+  -selenium configuration
+https://selenium-python.readthedocs.io/installation.html
 
 git clone https://github.com/f0ns1/search_like_expert.git
 
